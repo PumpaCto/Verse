@@ -1,33 +1,22 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Tokenomics from "./pages/Tokenomics";
-import Roadmap from "./pages/Roadmap";
-import Contact from "./pages/Contact";
-import ScrollToTop from "./components/ScrollToTop";
+import React from 'react';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import About from './components/About';
+import Tokenomics from './components/Tokenomics';
+import Roadmap from './components/Roadmap';
+import Footer from './components/Footer';
 
-function App() {
+const App = () => {
   return (
-    <Router>
-      <div className="min-h-screen flex flex-col">
-        <Navbar />
-        <ScrollToTop />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/tokenomics" element={<Tokenomics />} />
-            <Route path="/roadmap" element={<Roadmap />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <div className="bg-gradient-to-b from-[#0f172a] to-black min-h-screen text-white">
+      <Navbar />
+      <Hero />
+      <About />
+      <Tokenomics />
+      <Roadmap />
+      <Footer />
+    </div>
   );
-}
+};
 
 export default App;
